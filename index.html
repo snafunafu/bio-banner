@@ -66,7 +66,7 @@
   <div id="container"></div>
 
   <script>
-    const sets = ["cphi", "bio", "pmec", "hi"];
+    const sets = ["bio", "cphi"]; // ✅ 순서 변경 + pmec/hi 제거
     let allImages = [];
 
     function createCanvasSet(index, name) {
@@ -127,7 +127,7 @@
 
       sets.forEach((set, i) => {
         const baseIndex = i * 4;
-        const fontEn = (set === 'hi') ? "Nunito Sans" : "Poppins";
+        const fontEn = (set === 'hi') ? "Nunito Sans" : "Poppins"; // 'hi'는 어차피 없음
         const fontBoothKr = (set === 'hi') ? "Nunito Sans" : "Poppins";
 
         for (let j = 1; j <= 4; j++) {
@@ -182,13 +182,7 @@
       const labelFont = (set === 'hi') ? "Nunito Sans" : "Poppins";
       const boothFont = (set === 'hi') ? "Nunito Sans" : "Poppins";
 
-      if (set === 'hi') {
-        ctx.textAlign = 'left';
-        ctx.font = `700 90px "${labelFont}"`;
-        ctx.fillText(label, 75, 140);
-        ctx.font = `700 120px "${boothFont}"`;
-        ctx.fillText(boothText, 75, 245);
-      } else if (set === 'bio') {
+      if (set === 'bio') {
         ctx.textAlign = 'right';
         ctx.font = `700 80px "${labelFont}"`;
         ctx.fillText(label, 980, 400);
@@ -205,3 +199,4 @@
   </script>
 </body>
 </html>
+
